@@ -1,6 +1,6 @@
 import { ProductType } from "../context/ProductsProvide";
 import { ReducerActionType, ReducerAction } from "../context/CartProvider";
-import { ReactElement } from "react";
+import { ReactElement, memo } from "react";
 
 type PropsType = {
     product: ProductType;
@@ -53,4 +53,18 @@ const Product = ({
     return content;
 };
 
-export default Product;
+function areProductsEqual(
+    { product: prevProd, inCart: prevInCart }: PropsType,
+    { product: nextProd, inCart: nextInCart }: PropsType
+) {
+    return Object.keys(prevProd).every((key) => {
+        return (
+            prevProd[key as keyof ProductType] ===
+                nextProd[key as keyof ProductType] && prevInCart === nextInCart
+        );
+    });
+}
+
+const MemoizedProduct = memo<typeof Product>(Product, areProductsEqual);
+
+export default MemoizedProduct;

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { ChangeEvent, ReactElement } from "react";
+import { ChangeEvent, ReactElement, memo } from "react";
 import { CartItemType } from "../context/CartProvider";
 import { ReducerAction, ReducerActionType } from "../context/CartProvider";
 import { MdRemoveShoppingCart } from "react-icons/md";
@@ -100,4 +100,21 @@ const CartLineItem = ({ item, dispatch, REDUCER_ACTIONS }: PropsType) => {
     return content;
 };
 
-export default CartLineItem;
+function areItemsEqual(
+    { item: prevItem }: PropsType,
+    { item: nextTime }: PropsType
+) {
+    return Object.keys(prevItem).every((key) => {
+        return (
+            prevItem[key as keyof CartItemType] ===
+            nextTime[key as keyof CartItemType]
+        );
+    });
+}
+
+const MemoizedCartLineItem = memo<typeof CartLineItem>(
+    CartLineItem,
+    areItemsEqual
+);
+
+export default MemoizedCartLineItem;
