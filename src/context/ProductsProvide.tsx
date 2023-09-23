@@ -8,26 +8,41 @@ export type ProductType = {
     price: number;
 };
 
-const initialState: ProductType[] = [];
+// const initialState: ProductType[] = [];
 
 // define an initial state for the product
-// const initialState: ProductType[] = [
-//     {
-//         sku: "item0001",
-//         name: "Widget",
-//         price: 9.99,
-//     },
-//     {
-//         sku: "item0002",
-//         name: "Premium Widget",
-//         price: 19.99,
-//     },
-//     {
-//         sku: "item0003",
-//         name: "Deluxe Widget",
-//         price: 29.99,
-//     },
-// ];
+const initialState: ProductType[] = [
+    {
+        sku: "item0001",
+        name: "Widget",
+        price: 9.99,
+    },
+    {
+        sku: "item0002",
+        name: "Premium Widget",
+        price: 19.99,
+    },
+    {
+        sku: "item0003",
+        name: "Deluxe Widget",
+        price: 29.99,
+    },
+    {
+        sku: "item0004",
+        name: "Widget",
+        price: 9.99,
+    },
+    {
+        sku: "item0005",
+        name: "Premium Widget",
+        price: 19.99,
+    },
+    {
+        sku: "item0006",
+        name: "Deluxe Widget",
+        price: 29.99,
+    },
+];
 
 export type UseProductContextType = {
     products: ProductType[];
@@ -47,21 +62,21 @@ export const ProductProvide = ({ children }: ChildrenType) => {
     const [products, setProducts] = useState<ProductType[]>(initialState);
 
     // Load the product when app mounts
-    useEffect(() => {
-        const fetchProducts = async (): Promise<ProductType[]> => {
-            const response = await fetch("http://localhost:3500/products")
-                .then((res) => res.json())
-                .catch((err) => {
-                    if (err instanceof Error) {
-                        console.log(err);
-                    }
-                });
-            return response;
-        };
-        fetchProducts().then((data) => {
-            setProducts(data);
-        });
-    }, []);
+    // useEffect(() => {
+    //     const fetchProducts = async (): Promise<ProductType[]> => {
+    //         const response = await fetch("data/products.json")
+    //             .then((res) => res.json())
+    //             .catch((err) => {
+    //                 if (err instanceof Error) {
+    //                     console.log(err);
+    //                 }
+    //             });
+    //         return response;
+    //     };
+    //     fetchProducts().then((data) => {
+    //         setProducts(data);
+    //     });
+    // }, []);
 
     return (
         <ProductContext.Provider value={{ products }}>
