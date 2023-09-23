@@ -1,19 +1,21 @@
 header {
-    position: relative;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    right: 0;
 
     .bar {
-        padding: 0 1em;
-        position: fixed;
+        padding: 0.25em 1em;
+        max-width: 1224px;
+        margin-inline: auto;
         width: 100%;
-        left: 0;
-        right: 0;
 
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         /* border: 2px solid rgb(32, 32, 32); */
-        background-color: rgba(182, 178, 178, 0.381);
+        background-color: rgba(182, 178, 178, 0.241);
         backdrop-filter: blur(25px);
     }
     .header__title-bar {
