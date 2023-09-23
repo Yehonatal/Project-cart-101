@@ -11,8 +11,12 @@ const Footer = ({ viewCart }: PropsType) => {
     const pageContent = !viewCart ? (
         <div className="bar">
             <div className="header__title-bar">
-                <h4 className="logo">
-                    CART by Yehonatal &copy;
+                <h4 className="logo me">
+                    CART by{" "}
+                    <a href="https://github.com/Yehonatal" target="_blank">
+                        Yehonatal
+                    </a>{" "}
+                    &copy;
                     <span> - {year}</span>
                 </h4>
             </div>
@@ -24,8 +28,12 @@ const Footer = ({ viewCart }: PropsType) => {
     ) : (
         <div className="bar">
             <div className="header__title-bar">
-                <h4 className="logo">
-                    CART by Yehonatal &copy;
+                <h4 className="logo me">
+                    CART by{" "}
+                    <a href="https://github.com/Yehonatal" target="_blank">
+                        Yehonatal
+                    </a>{" "}
+                    &copy;
                     <span> - {year}</span>
                 </h4>
             </div>

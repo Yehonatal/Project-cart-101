@@ -29,3 +29,8 @@ footer {
     margin: 1em 0;
     padding: 0 1em;
 }
+
+.me a {
+    text-decoration: underline;
+    cursor: pointer;
+}
