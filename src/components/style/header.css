@@ -1,0 +1,35 @@
+header {
+    position: relative;
+
+    .bar {
+        padding: 0 1em;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        /* border: 2px solid rgb(32, 32, 32); */
+        background-color: rgba(9, 9, 9, 0.139);
+        backdrop-filter: blur(15px);
+    }
+    .header__title-bar {
+        display: flex;
+        margin: 0;
+    }
+    .header__cart-detail {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__cart-detail {
+        gap: 10px !important;
+    }
+}

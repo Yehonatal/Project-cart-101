@@ -1,0 +1,31 @@
+footer {
+    position: relative;
+
+    .bar {
+        padding: 0 1em;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        backdrop-filter: blur(15px);
+    }
+    .header__title-bar {
+        display: flex;
+        margin: 0;
+    }
+    .header__cart-detail {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+}
+.footer {
+    margin: 1em 0;
+    padding: 0 1em;
+}
