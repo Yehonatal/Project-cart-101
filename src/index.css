@@ -118,3 +118,7 @@ img {
     margin-bottom: 0.25em;
     opacity: 0.25;
 }
+
+.label {
+    display: none;
+}

@@ -14,15 +14,15 @@ const CartLineItem = ({ item, dispatch, REDUCER_ACTIONS }: PropsType) => {
     const img: string = new URL(`../images/${item.sku}.jpg`, import.meta.url)
         .href;
 
-    const lineTotal: number = item.quantity * item.quantity;
+    const lineTotal: number = item.quantity * item.price;
     const highestQty: number = 20 > item.quantity ? 20 : item.quantity;
 
     const optValues: number[] = [...Array(highestQty).keys()].map((i) => i + 1);
 
     const options: ReactElement[] = optValues.map((value) => {
         return (
-            <option key={`opt${value}`} value="value">
-                value
+            <option key={`opt${value}`} value={value}>
+                {value}
             </option>
         );
     });
@@ -48,18 +48,48 @@ const CartLineItem = ({ item, dispatch, REDUCER_ACTIONS }: PropsType) => {
             <img src={img} alt={item.name} />
             <div className="cart__detail">
                 <h3 className="cart__title">{item.name.toUpperCase()}</h3>
-                <p>
-                    Price:{" "}
-                    <span>
-                        {new Intl.NumberFormat("en-US", {
-                            style: "currency",
-                            currency: "USD",
-                        }).format(item.price)}
-                    </span>
-                </p>
-                <p>
-                    Quantity: <span>{item.quantity}</span>
-                </p>
+
+                <div className="cart__items" aria-label="Line Item Subtotal">
+                    <div>
+                        Price:{" "}
+                        <span>
+                            {new Intl.NumberFormat("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }).format(item.price)}
+                        </span>
+                    </div>
+                    <div>
+                        {" "}
+                        Sub-Total:
+                        <span>
+                            {new Intl.NumberFormat("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }).format(lineTotal)}
+                        </span>
+                    </div>
+                </div>
+
+                <div className="cart__items">
+                    <p className="qty">
+                        Quantity: <span>{item.quantity}</span>
+                    </p>
+
+                    <label className="label" htmlFor="itemQty">
+                        Item Quantity
+                    </label>
+                    <select
+                        className="item_qty"
+                        name="itemQty"
+                        id={item.name}
+                        aria-label="Item Quantity"
+                        value={item.quantity}
+                        onChange={onChangeQty}
+                    >
+                        {options}
+                    </select>
+                </div>
             </div>
             <button className="rm_btn" onClick={onRemoveFromCart}>
                 <MdRemoveShoppingCart />
