@@ -34,7 +34,7 @@ const ProductList = () => {
 
     const content = (
         <main className="main main-products">
-            <h3>Products</h3>
+            <h3 className="cart__heading">Products</h3>
             <hr />
             <div className="grid">{pageContent}</div>
         </main>

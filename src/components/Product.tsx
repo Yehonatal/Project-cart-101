@@ -33,7 +33,7 @@ const Product = ({
             <img src={img} alt={product.name} />
             <div className="card_detail">
                 <div className="card_content">
-                    <p>
+                    <p className="product_price">
                         {new Intl.NumberFormat("en-US", {
                             style: "currency",
                             currency: "USD",

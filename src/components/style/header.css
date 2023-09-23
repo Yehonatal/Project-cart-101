@@ -33,3 +33,7 @@ header {
         gap: 10px !important;
     }
 }
+
+button {
+    border-radius: 5px;
+}
