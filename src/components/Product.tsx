@@ -28,10 +28,11 @@ const Product = ({
 
     const content = (
         <article className="card">
+            <h3 className="prod_name">{product.name.toUpperCase()}</h3>
+
             <img src={img} alt={product.name} />
             <div className="card_detail">
                 <div className="card_content">
-                    <h3>{product.name}</h3>
                     <p>
                         {new Intl.NumberFormat("en-US", {
                             style: "currency",

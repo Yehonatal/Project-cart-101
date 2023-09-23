@@ -3,7 +3,7 @@ header {
 
     .bar {
         padding: 0 1em;
-        position: absolute;
+        position: fixed;
         width: 100%;
         left: 0;
         right: 0;
@@ -13,8 +13,8 @@ header {
         align-items: center;
         justify-content: space-between;
         /* border: 2px solid rgb(32, 32, 32); */
-        background-color: rgba(9, 9, 9, 0.139);
-        backdrop-filter: blur(15px);
+        background-color: rgba(182, 178, 178, 0.381);
+        backdrop-filter: blur(25px);
     }
     .header__title-bar {
         display: flex;

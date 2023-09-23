@@ -1,6 +1,6 @@
 .main {
-    padding: 0 1em;
-    margin-top: 4em !important;
+    padding: 0 1em !important;
+    margin: 4em 0 !important;
 
     .card {
         border-radius: 15px;
@@ -12,9 +12,8 @@
 
     .card_detail {
         background-color: rgba(9, 9, 9, 0.139);
-        flex: 1;
-        margin-top: 1em;
-        padding: 0 0.5em;
+        margin-top: 0.5em;
+        padding: 0.5em;
         border-radius: 0 0 10px 10px;
         margin-bottom: 1em;
         display: flex;
@@ -36,6 +35,9 @@
         border: none;
         outline: none;
         text-transform: uppercase;
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+        color: inherit;
     }
 }
 .loading {
@@ -49,6 +51,7 @@
 
 .grid {
     margin-top: 2em;
+    padding: 0 1em !important;
     display: grid;
     gap: 40px;
     grid-template-columns: repeat(3, 1fr);
@@ -66,4 +69,15 @@
 
 .main img {
     flex: 4;
+}
+
+.prod_name {
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 1.25rem;
+    position: absolute;
+    background-color: rgba(214, 214, 214, 0.372);
+    padding: 0 0.5em;
+    border-radius: 10px 10px 10px 0;
+    backdrop-filter: blur(100px);
 }
