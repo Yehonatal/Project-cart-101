@@ -1,1 +1,3 @@
-# React + TypeScript + Vite + CART :)
+# React + TypeScript + Vite
+
+# CART :)
