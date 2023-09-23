@@ -33,11 +33,6 @@
     box-sizing: border-box;
 }
 
-.offscreen {
-    position: absolute;
-    left: -10000px;
-}
-
 body {
     font-family: "Nunito", sans-serif;
 }
@@ -48,13 +43,15 @@ select {
     display: flex;
     font: inherit;
     padding: 0.25em;
+    font-size: 0.85rem;
 }
 
 img {
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 #root {
@@ -69,20 +66,6 @@ img {
 .footer {
     padding: 0.25em;
     margin: 0 1em;
-}
-
-.main {
-    display: flex;
-    gap: 1rem;
-}
-
-.main--products {
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-.main--cart {
-    flex-flow: column nowrap;
 }
 
 .header {

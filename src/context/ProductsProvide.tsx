@@ -49,7 +49,7 @@ export const ProductProvide = ({ children }: ChildrenType) => {
     // Load the product when app mounts
     useEffect(() => {
         const fetchProducts = async (): Promise<ProductType[]> => {
-            const response = await fetch("http://localhost:3500")
+            const response = await fetch("http://localhost:3500/products")
                 .then((res) => res.json())
                 .catch((err) => {
                     if (err instanceof Error) {
